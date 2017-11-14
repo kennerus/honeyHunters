@@ -3,6 +3,7 @@
 namespace libs;
 
 class Parser {
+
     /**
      * @param string $tpl
      * @param array $data

@@ -18,26 +18,12 @@ class Config
             'host' => 'localhost',
             'user' => 'root',
             'pass' => '',
-            'db' => 'cms',
+            'db' => 'hh',
             'port' => NULL,
             'socket' => NULL,
             'pconnect' => FALSE,
             'charset' => 'utf8',
             'suffix' => 'k_',
-        ];
-    }
-
-    public function routing()
-    {
-        return [
-            'admin-panel' => 'k-admin',
-        ];
-    }
-
-    public function user()
-    {
-        return [
-            'rule' => 'user'
         ];
     }
 

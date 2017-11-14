@@ -5,11 +5,12 @@ $("document").ready(function(){
 		var data = $("#needs-validation").serialize();
 
 		$.ajax({
-			url: 'insert.php',
+			url: 'ajax.php',
 			type: 'POST',
 			data: data,
 			success: function(response) {
-				alert(response);
+				$('.comments__blocks').append(response);
+				console.log(response);
 			}
 		})
 		.done(function() {

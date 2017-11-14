@@ -1,5 +1,8 @@
 <?php
 namespace libs;
+
+use config\Config;
+
 /**
  * Created by PhpStorm.
  * User: apuc0
@@ -18,8 +21,17 @@ class Db
 
     public function __construct(array $data = array())
     {
-        $connect = new BdConnect();
-        $this->connect = $connect->getConnect();
+        $config = new Config();
+        $this->defaults = $config->db();
+        $this->settings = array_merge($this->defaults, $data);
+        $this->connect = mysqli_connect($this->settings['localhost'], $this->settings['user'], $this->settings['pass'], $this->settings['db']);
+
+        if (!$this->connect) {
+            printf("Невозможно подключиться к базе данных. Код ошибки: %s\n", mysqli_connect_error());
+            exit;
+        }
+
+        mysqli_set_charset($this->connect, $this->settings['charset']);
     }
 
     /**
@@ -307,7 +319,7 @@ class Db
      * @param $select
      * @return $this
      */
-    public function find($table, $select)
+    public function find($table, $select = '*')
     {
         $this->table = $table;
         $this->query = 'SELECT ' . $select . " FROM $table";
