@@ -14,20 +14,20 @@ $("document").ready(function(){
 		var data = $("#needs-validation").serialize();
 
 			$.ajax({
-			url: 'ajax.php',
-			type: 'POST',
-			data: data,
-			success: function(response) {
-				console.log(response);
-				$('.comments__blocks').append(response).each(function() {
-					$(".line-clamp").dotdotdot({
-						ellipsis: "\u2026 ",
-						height: 150
-				    })
-				    console.log($('line-clamp'));
-				});
-				alert('Ваш комментарий добавлен!');
-			}
+				url: 'ajax.php',
+				type: 'POST',
+				data: data,
+				success: function(response) {
+					console.log(response);
+					$('.comments__blocks').append(response).each(function() {
+						$(".line-clamp").dotdotdot({
+							ellipsis: "\u2026 ",
+							height: 150
+					    })
+					    console.log($('line-clamp'));
+					});
+					alert('Ваш комментарий добавлен!');
+				}
 			})
 			.done(function(){
 				console.log('done')
@@ -39,4 +39,23 @@ $("document").ready(function(){
 				console.log('complete')
 			});
 	})
+
+	$(".button").click(function(event) {
+		event.preventDefault();
+	    if (result) {
+	        var $this = $(this);
+	        var $thisItem = $this.closest(itemBox);
+	        var thisIndex = $thisItem.attr('data-id');
+	        
+	        $.ajax({
+	              url:'delete.php',
+	              data:{'itemid':thisIndex },
+	              success:function(r){
+	                  $thisItem.slideUp(300,function(){
+	                      $thisItem.remove();
+	                  });
+	              }
+	        });
+	    }
+	});
 })

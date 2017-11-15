@@ -198,11 +198,13 @@ select.form-control:focus::-ms-value {
 	border: none;
 	border-radius: 50%;
 	z-index: 2;
+	cursor: pointer;
 }
 
 .delete:hover,
 .delete:active,
 .delete:focus {
+	background-color: white;
 	color: rgba(0,0,0,0.7);
 	text-decoration: none;
 }
@@ -285,49 +287,11 @@ select.form-control:focus::-ms-value {
 .comments__block:nth-child(even) .block__text a {
 	color: #58ad52; 
 }
+
 .line-clamp {
 	overflow: hidden; 
 }
-/* обрезание текста в первом слайдере сайдбара */
-/*.line-clamp:nth-child(odd) {
-margin: 5px 10px;
-font-family: 'Roboto-Regular', sans-serif;
-font-size: 13px;
-color: #1b1716;
-display : block;
-display : -webkit-box;
--webkit-box-orient : vertical;
-position : relative;
-line-height : 1.4;
-overflow : hidden;
-text-overflow : ellipsis;
-padding : 0 !important;
-height : calc(1em * 1.4 * 6);
-}
-.line-clamp:nth-child(odd)::after {
-content : '...';
-text-align : right;
-bottom : 0;
-right : 0;
-width : 25%;
-display : block;
-position : absolute;
-height : calc(1em * 1.4);
-background : linear-gradient(to right, transparent, rgba(232,238,243,1) );
-}
 
-.line-clamp:nth-child(even)::after {
-content : '...';
-text-align : right;
-bottom : 0;
-right : 0;
-width : 25%;
-display : block;
-position : absolute;
-height : calc(1em * 1.4);
-background : linear-gradient(to right, transparent, rgba(232,238,243,1));
-}
-*/
 /* footer */
 
 .footer {
