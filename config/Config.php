@@ -17,8 +17,8 @@ class Config
         return [
             'host' => 'localhost',
             'user' => 'root',
-            'pass' => '',
-            'db' => 'hh',
+            'pass' => '1',
+            'db' => 'comments',
             'port' => NULL,
             'socket' => NULL,
             'pconnect' => FALSE,

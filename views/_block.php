@@ -7,7 +7,7 @@
  * @var $data array
  */
 ?>
-<div class="col-lg-4 col-md-4 col-sm-6 col-12 comments__block odd">
+<div class="col-lg-4 col-md-4 col-sm-6 col-12 comments__block">
     <div class="container">
         <div class="row">
             <div class="col-md-12 block__title">
@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-12 block__text">
                 <a href="mailto:<?= $data['email'] ?>"><?= $data['email'] ?></a>
-                <p><?= $data['comment'] ?></p>
+                <p class="line-clamp"><?= $data['comment'] ?></p>
             </div>
         </div>
     </div>

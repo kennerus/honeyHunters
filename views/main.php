@@ -60,7 +60,7 @@
 
                         </div>
                     </div>
-                    <button type="submit" id="send" class="btn btn-primary ml-auto form__btn">Записать</button>
+                    <button type="button" id="send" class="btn btn-primary ml-auto form__btn">Записать</button>
                 </form>
             </div>
         </div>
@@ -74,7 +74,7 @@
             </div>
             <div class="row comments__blocks">
                 <?php foreach ($blocks as $block): ?>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12 comments__block odd">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12 comments__block">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 block__title">
@@ -82,7 +82,7 @@
                             </div>
                             <div class="col-md-12 block__text">
                                 <a href="mailto:<?= $block['Email'] ?>"><?= $block['Email'] ?></a>
-                                <p><?= $block['Comment'] ?></p>
+                                <p class="line-clamp"><?= $block['Comment'] ?></p>
                             </div>
                         </div>
                     </div>
@@ -116,6 +116,7 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/jquery.dotdotdot.js"></script>
 
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -134,6 +135,5 @@
         }, false);
     })();
 </script>
-
 </body>
 </html>
