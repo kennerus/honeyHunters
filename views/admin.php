@@ -74,10 +74,10 @@
             </div>
             <div class="row comments__blocks">
                 <?php foreach ($blocks as $block): ?>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-12 comments__block" data-id="">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12 comments__block" data-id="<?= $block['ID'] ?>">
                     <div class="container">
                         <div class="row">
-                            <button class="delete">×</button>
+                            <button data-id="<?= $block['ID'] ?>" class="_delete">×</button>
                             <div class="col-md-12 block__title">
                                 <h3><?= $block['Name'] ?></h3>
                             </div>

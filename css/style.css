@@ -186,7 +186,7 @@ select.form-control:focus::-ms-value {
 	background-color: #f6f6f7;
 }
 
-.delete {
+._delete {
 	position: absolute;
 	top: -5px;
 	right: -5px;
@@ -201,9 +201,9 @@ select.form-control:focus::-ms-value {
 	cursor: pointer;
 }
 
-.delete:hover,
-.delete:active,
-.delete:focus {
+._delete:hover,
+._delete:active,
+._delete:focus {
 	background-color: white;
 	color: rgba(0,0,0,0.7);
 	text-decoration: none;
