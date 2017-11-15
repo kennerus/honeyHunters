@@ -40,13 +40,15 @@ $("document").ready(function(){
 			});
 	})
 
+	var itemBox = $('.comments__block')
+
 	$(".button").click(function(event) {
 		event.preventDefault();
 	    if (result) {
 	        var $this = $(this);
 	        var $thisItem = $this.closest(itemBox);
 	        var thisIndex = $thisItem.attr('data-id');
-	        
+
 	        $.ajax({
 	              url:'delete.php',
 	              data:{'itemid':thisIndex },
