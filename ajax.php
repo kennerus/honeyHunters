@@ -7,7 +7,7 @@
  */
 
 include __DIR__ . '/init.php';
-
+\libs\Debug::prn($_POST);
 $db->insert([
     'Name' => $_POST['name'],
     'Email' => $_POST['email'],
